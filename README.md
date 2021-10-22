@@ -1,3 +1,3 @@
 ## Rosalind problems
 
-Implementation of rosalind solutions written in python
+Implementation of rosalind solutions written in python.
