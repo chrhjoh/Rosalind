@@ -4,7 +4,7 @@ class Solution:
     
     # Actual solution
     def count_dna(self, dna) -> list:
-        return [dna.count('A'), dna.count('C'), dna.count('G'), dna.count('T')]
+        return dna.replace('T', 'U')
         
 def load_data(filename):
     with open(filename, 'r') as infile:
@@ -15,13 +15,13 @@ def main():
     args = get_args()
 
     if args.testing:
-        dna = 'AGCTTTTCATTCTGACTGCAACGGGCAATATGTCTCTGTGTGGATTAAAAAAAGAGTGTCTGATAGCAGC'
+        dna = 'GATGGAACTTGACTACGTAAATT'
     else:
         dna = load_data(args.data_file)
 
     solution = Solution()
     result = solution.count_dna(dna)
-    print(*result)
+    print(result)
 
 
 
