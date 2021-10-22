@@ -1,9 +1,7 @@
 from load_args import get_args
 
-class Solution:
     
-    # Actual solution
-    def count_dna(self, dna) -> list:
+def solution(dna):
         return [dna.count('A'), dna.count('C'), dna.count('G'), dna.count('T')]
         
 def load_data(filename):
@@ -19,8 +17,7 @@ def main():
     else:
         dna = load_data(args.data_file)
 
-    solution = Solution()
-    result = solution.count_dna(dna)
+    result = solution(dna)
     print(*result)
 
 

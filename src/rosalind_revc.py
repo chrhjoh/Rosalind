@@ -2,7 +2,9 @@ from load_args import get_args
 
 
 def solution(self, dna):
-    return dna.replace('T', 'U')
+    trans = str.maketrans('ACTG', 'TGAC')
+
+    return dna.translate(trans)[::-1]
         
 def load_data(filename):
     with open(filename, 'r') as infile:
@@ -13,10 +15,9 @@ def main():
     args = get_args()
 
     if args.testing:
-        dna = 'GATGGAACTTGACTACGTAAATT'
+        dna = 'AAAACCCGGT'
     else:
         dna = load_data(args.data_file)
-
 
     result = solution(dna)
     print(result)
@@ -26,4 +27,3 @@ def main():
 
 if __name__ == '__main__':
     main()
-
