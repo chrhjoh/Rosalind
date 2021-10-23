@@ -28,4 +28,7 @@ def fasta_reader(filename):
         sequences.append(''.join(seq_list))
 
     return headers, sequences
-    
+
+def rev_comp(sequence):
+    trans_table = str.maketrans('ACTGactgNn', 'TGACTGACNN')
+    return sequence.translate(trans_table)[::-1]
