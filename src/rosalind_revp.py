@@ -5,7 +5,6 @@ def solution(sequences):
     idxs = []
     for i in range(len(sequences[0])):
         for j in range(4, min(13,len(sequences[0])-i + 1)):
-            print(i, j)
             motif = sequences[0][i:i+j]
             if motif == rev_comp(motif):
                 idxs.append([i+1,j])
@@ -26,7 +25,8 @@ def main():
 
     
     result = solution(sequences)
-    print(result)
+    for res in result:
+        print(*res)
 
 if __name__ == '__main__':
     main()
