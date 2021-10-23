@@ -1,4 +1,4 @@
-from load_args import get_args
+from rosalind_functions import get_args
 
     
 def solution(dna):

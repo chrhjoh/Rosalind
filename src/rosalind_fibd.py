@@ -7,9 +7,14 @@ def solution(n, k, sequence=[]):
     
     if len(sequence) < 2:
         sequence += [1, 1]
-
+    elif len(sequence) == k or len(sequence) == k+1:
+        sequence += [sequence[-2] + sequence[-1] - 1]
+    elif len(sequence) > k:
+        sequence += [sequence[-2] + sequence[-1] - sequence[-k-1]]
+        
+        
     else:
-        sequence += [sequence[-2] * k + sequence[-1]]
+        sequence += [sequence[-2] + sequence[-1]]
     
     if len(sequence) < n:
         solution(n, k, sequence)
@@ -26,7 +31,7 @@ def main():
     args = get_args()
 
     if args.testing:
-        n = 5
+        n = 6
         k = 3
     else:
         data = load_data(args.data_file)
